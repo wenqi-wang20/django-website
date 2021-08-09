@@ -1,0 +1,11 @@
+<!-- homepage 搜索框 -->
+{% extends 'base.html' %}
+{% load static %}
+{% block main_block %}
+    <main>
+        <!-- TODO: load static -->
+        <div class="search-area"><img src="../static/img/SAST.png" width="200" height="200">
+            <div class="search-box"><form action="/search/" method="GET"><input type="text" name="q" placeholder="Search"><span></span></form></div>
+        </div>
+    </main>
+{% endblock main_block %}

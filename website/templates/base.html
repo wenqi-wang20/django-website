@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+        <!-- TODO: 修改网站名称和描述 -->
+        <title> What's Up? </title>
+        <meta name="description" content="description">
+
+        <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+        <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+        <!-- TODO: load static -->
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    </head>
+    <body>
+    <nav class="navbar navbar-light navbar-expand-md navigation-clean-button">
+        <div class="container-fluid">
+            <!-- TODO: load static -->
+            {% load static %}
+            <a href="/"><img src="{% static 'img/SAST.png' %}" width="60" height="60"></a>
+            <!-- TODO: POST表单内容-->
+            <div class="search-box"><form action="#" method="GET"><input id="input" type="text" placeholder=" " name="q" value=""></form><span></span></div>
+
+        <span class="navbar-text actions">
+            <!-- TODO: 如果用户已经登录，则展示log out和头像，否则展示log in和sign up-->
+            {% if somthing %}
+            <a class="login" href="/logout">Log Out</a>
+            <!-- TODO: load static -->
+            {% load static %}
+            <a href="#"><img class="user-avatar" src="{% static 'img/avatar_2x.png' %}"></a>
+            {% else %}
+            <a class="login" href="/login">Log In</a>
+            <a class="btn btn-light action-button" role="button" href="/signup">Sign Up</a>
+            {% endif %}
+        </span>
+        </div>
+    </nav>
+
+    {% block main_block %}
+    {% endblock main_block %}
+
+
+    <footer id="footer">
+    <div style= "text-align: center; margin: 0px; padding:10px">
+        <p style= "color:grey; font-family: raleway">&copy;2020&nbsp;<a target="_blank" href="https://github.com/prnake/search_engine_demo" rel="noopener noreferrer">Papersnake</a><span class="my-face">&nbsp;(=^･ｪ･^=)ﾉ<span style='color:lightpink'>♥</span></span></p>
+    </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+    <!-- TODO: load static -->
+    {% load static %}
+    <script src="{% static 'js/style.js' %}"></script>
+    </body>
+</html>

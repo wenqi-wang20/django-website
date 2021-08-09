@@ -1,0 +1,29 @@
+<!-- 登录表单 -->
+{% extends 'base.html' %}
+{% load static %}
+{% block main_block %}
+    <main>
+        <div class="login-card bg-light" style="border-radius: 10px">
+            <!-- TODO: load static -->
+            <img class="profile-img-card" src="../static/img/avatar_2x.png">
+            <p class="profile-name-card"> </p>
+            <!-- TODO: POST表单 -->
+            <form class="form-signin" action="#" method="post">
+                <div class="alert alert-warning"> ERROR MESSAGE </div>
+
+                <span class="reauth-email"></span>
+                <input class="form-control" type="email" id="inputEmail" required="" placeholder="Email address" name="email" autofocus="">
+                <input class="form-control" type="password" name="password" id="inputPassword" required="" placeholder="Password">
+
+                <div class="checkbox">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="formCheck-1">
+                        <label class="form-check-label" for="formCheck-1">Remember me</label>
+                    </div>
+                </div>
+                <button class="btn btn-primary btn-block btn-lg btn-signin" type="submit">Log in</button>
+            </form>
+            <a class="forgot-password" href="#">Forgot your password?</a>
+        </div>
+    </main>
+{% endblock main_block %}

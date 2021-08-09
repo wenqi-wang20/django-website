@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../django/django/.idea/django.iml" filepath="$PROJECT_DIR$/../django/django/.idea/django.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/django_Web.iml" filepath="$PROJECT_DIR$/.idea/django_Web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../django/search_engine_demo-master/.idea/search_engine_demo.iml" filepath="$PROJECT_DIR$/../django/search_engine_demo-master/.idea/search_engine_demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../django/site_one/.idea/site_one.iml" filepath="$PROJECT_DIR$/../django/site_one/.idea/site_one.iml" />
+    </modules>
+  </component>
+</project>

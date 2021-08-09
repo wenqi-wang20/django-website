@@ -1,0 +1,27 @@
+<!-- 搜索结果列表 -->
+{% extends 'base.html' %}
+{% load static gravatar %}
+{% block main_block %}
+<main>
+    <div class="container">
+        <!-- TODO: -->
+        <p>Find ? results in ? s, currently at page ? / ?.<br></p>
+
+        <!-- TODO: 展示每个搜索结果-->
+        <div class="post-container">
+            <div class="post-content">
+                <h1 class="post-title"><a href="#"> TITLE </a></h1>
+                <p class="post-abstract">
+                    ARTICLE ABSTRACT
+                </p>
+            </div>
+        </div>
+
+        <p style="text-align: center">
+            <a href="#">上一页</a>
+            <span>第 ? 页 | 共 ? 页</span>
+            <a href="#">下一页</a>
+        </p>
+    </div>
+</main>
+{% endblock main_block %}
