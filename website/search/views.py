@@ -1,9 +1,19 @@
 import time
+import pymysql
 from django.shortcuts import render, redirect, reverse
 from django.db.models import Q
 from django.core.paginator import Paginator
 from django.core.paginator import EmptyPage
 from django.core.paginator import PageNotAnInteger
+
+def conn_sql():
+    HOST = '121.4.27.125'
+    USERNAME = 'root'
+    DBNAME = 'webdata'
+    PASSWORD = 'wwq2002620'
+    db = pymysql.connect(user=USERNAME,password=PASSWORD,host=HOST,database=DBNAME,port=3306,charset='utf8mb4')
+    return db
+
 
 def home(request):
     title = "Search"
@@ -16,6 +26,17 @@ def search_list(request):
     keywords = request.GET.get('q')
     message = ''
     if not keywords:
-        return redirect('home/')
+        return redirect('/')
     words = keywords.split(' ')
+####################
+
+def login(request):
+    if reverse('login'):
+        if request.session.get('is_login', None):
+            return redirect('/')
+        if request.method == "POST":
+            login_form = forms.
+
+
+
 
