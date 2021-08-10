@@ -1,6 +1,7 @@
 import time
 import pymysql
 from django.shortcuts import render, redirect, reverse
+from . import forms,models
 from django.db.models import Q
 from django.core.paginator import Paginator
 from django.core.paginator import EmptyPage
@@ -35,7 +36,14 @@ def login(request):
         if request.session.get('is_login', None):
             return redirect('/')
         if request.method == "POST":
-            login_form = forms.
+            login_form = forms.UserForm(request.POST)
+            message = "请检查填写的内容！"
+            if login_form.is_valid():
+                email = request.POST.get("email")
+                password = request.POST.get("password")
+                try:
+
+
 
 
 
