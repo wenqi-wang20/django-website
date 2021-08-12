@@ -1,0 +1,36 @@
+<!-- 搜索结果列表 -->
+{% extends 'base.html' %}
+{% block main_block %}
+<main>
+    <div class="container">
+        <!-- TODO: -->
+        <p>Find {{ post_list|length }} results in {{ load_time }} s, currently at page {{ posts.number }} / {{ paginator.num_pages }}.<br></p>
+
+        <!-- TODO: 展示每个搜索结果-->
+        {% for post in posts.object_list %}
+        <div class="post-container">
+            <div class="post-content">
+                <p style="font-family:云书法家杨永志瘦金行楷简;color:brown;font-size:45px">
+                    <a href="/detail/{{ post.id }}" style="color:brown"><b>{{ post.poem_name }}</b></a>
+                </p>
+                <p class="post-abstract">
+                    <p style="font-family:云书法家杨永志瘦金行楷简;color:DimGray;font-size:22px;">
+                        {{ post.dynasty }} {{ post.author_name }}
+                    </p>
+                </p>
+            </div>
+        </div>
+        {% endfor %}
+
+        <p style="text-align: center">
+            {% if posts.has_previous %}
+                <a href="?q={{ keywords }}&page={{ posts.previous_page_number }}">上一页</a>
+            {% endif %}
+            <span>第 {{ posts.number }} 页 | 共 {{ paginator.num_pages }} 页</span>
+            {% if posts.has_next %}
+                <a href="?q={{ keywords }}&page={{ posts.next_page_number }}">下一页</a>
+            {% endif %}
+        </p>
+    </div>
+</main>
+{% endblock main_block %}

@@ -1,0 +1,20 @@
+<!-- 新闻详情页 -->
+{% extends 'base.html' %}
+{% load static %}
+{% block main_block %}
+    <main>
+        <!-- TODO: -->
+        <div class="container"><p style="font-family:云书法家杨永志瘦金行楷简;color:brown;font-size:45px">
+            <p class="post-detail-title" style="font-family:云书法家杨永志瘦金行楷简;color:brown;font-size:75px">
+                <b>{{ post.poem_name }}</b>
+            </p>
+            <p class="post-detail-info" style="font-family:云书法家杨永志瘦金行楷简;color:DimGray;font-size:30px">
+                {{ post.dynasty }}  {{ post.author_name }}
+            </p>
+            <br/>
+            <div class="post-detail-content" style="font-family:文鼎颜楷;color:DimGray;font-size:38px;text-align:center;">
+                {{ post.content | safe }}
+            </div>
+        </div>
+    </main>
+{% endblock main_block %}
