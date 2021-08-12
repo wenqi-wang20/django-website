@@ -19,4 +19,5 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include("search.urls")),
+    path('captcha/', include("captcha.urls")),
 ]

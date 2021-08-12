@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 
         <!-- TODO: 修改网站名称和描述 -->
-        <title> What's Up? </title>
+        <title> 未名书摘 </title>
         <meta name="description" content="description">
 
         <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.14.0/css/all.min.css">
@@ -24,18 +24,18 @@
             <a href="/"><img src="{% static 'img/SAST.png' %}" width="60" height="60"></a>
             <!-- TODO: POST表单内容-->
             {% if searched %}
-            <div class="search-box"><form action="#" method="GET"><input id="input" type="text" placeholder=" " name="q" value="{{ keywords }}"></form><span></span></div>
+                <div class="search-box"><form action="{% url 'search' %}" method="GET"><input id="input" type="text" placeholder=" " name="q" value="{{ keywords }}"></form><span></span></div>
             {% endif %}
         <span class="navbar-text actions">
             <!-- TODO: 如果用户已经登录，则展示log out和头像，否则展示log in和sign up-->
-            {% if somthing %}
-            <a class="login" href="/logout">Log Out</a>
+            {% if request.session.is_login %}
+                <a class="login" href="/logout">Log Out</a>
             <!-- TODO: load static -->
             {% load static %}
             <a href="#"><img class="user-avatar" src="{% static 'img/avatar_2x.png' %}"></a>
             {% else %}
-            <a class="login" href="/login">Log In</a>
-            <a class="btn btn-light action-button" role="button" href="/signup">Sign Up</a>
+                <a class="login" href="/login">Log In</a>
+                <a class="btn btn-light action-button" role="button" href="/signup">Sign Up</a>
             {% endif %}
         </span>
         </div>
@@ -47,7 +47,7 @@
 
     <footer id="footer">
     <div style= "text-align: center; margin: 0px; padding:10px">
-        <p style= "color:grey; font-family: raleway">&copy;2021 thanks for&nbsp;<a target="_blank" href="https://github.com/prnake/search_engine_demo" rel="noopener noreferrer">Papersnake</a><span class="my-face">&nbsp;(=^･ｪ･^=)ﾉ<span style='color:lightpink'>♥</span></span></p>
+        <p style= "color:grey; font-family: raleway">&copy;2021 感谢&nbsp;<a target="_blank" href="https://github.com/prnake/search_engine_demo" rel="noopener noreferrer">Papersnake</a><span class="my-face">&nbsp;(=^･ｪ･^=)ﾉ<span style='color:lightpink'>♥</span></span></p>
     </div>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
